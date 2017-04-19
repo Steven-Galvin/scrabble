@@ -23,5 +23,9 @@ describe('String#scrabble') do
     expect("quixotry".scrabble()).to(eq(27))
   end
 
+  it('recognizes letters regardless of case') do
+    expect("QueTzAls".scrabble()).to(eq(26))
+  end
+
 
 end

@@ -11,6 +11,8 @@ class String
     score_10_letters = ["q", "z"]
     total_score_array = []
 
+    self.downcase!
+
     letters = self.split("")
 
     letters.each() do |letter|
