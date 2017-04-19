@@ -15,9 +15,9 @@ describe('String#scrabble') do
     expect("g".scrabble()).to(eq(2))
   end
 
-  # it('distinquishes between score 1 letters and score 2 letters') do
-  #   expect("da")
-  # end
+  it('returns sum of multiple letters') do
+    expect("da".scrabble()).to(eq(3))
+  end
 
 
 end
