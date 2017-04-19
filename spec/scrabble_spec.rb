@@ -27,5 +27,9 @@ describe('String#scrabble') do
     expect("QueTzAls".scrabble()).to(eq(26))
   end
 
+  it('recognizes non letters and adds no points') do
+    expect("QuIz2!".scrabble()).to(eq(22))
+  end
+
 
 end

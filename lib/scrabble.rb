@@ -29,8 +29,10 @@ class String
         total_score_array.push(5)
       elsif score_8_letters.include?(letter)
         total_score_array.push(8)
-      else
+      elsif score_10_letters.include?(letter)
         total_score_array.push(10)
+      else
+        total_score_array.push(0)
       end
     end
     update_total = total_score_array.sum()
