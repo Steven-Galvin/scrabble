@@ -2,41 +2,49 @@ require('descriptive_statistics')
 
 class String
   define_method(:scrabble) do
-    score_1_letters = ["a", "e", "i", "o", "u", "l", "n", "r", "s", "t"]
-    score_2_letters = ["d", "g"]
-    score_3_letters = ["b", "c", "m", "p"]
-    score_4_letters = ["f", "h", "v", "w", "y"]
-    score_5_letters = ["k"]
-    score_8_letters = ["j", "x"]
-    score_10_letters = ["q", "z"]
-    total_score_array = []
+    letter_values = {
+      1 => ["a", "e", "i", "o", "u", "l", "n", "r", "s", "t"],
+      2 => ["d", "g"],
+      3 => ["b", "c", "m", "p"],
+      4 => ["f", "h", "v", "w", "y"],
+      5 => ["k"],
+      8 => ["j", "x"],
+      10 => ["q", "z"]
+    }
 
-    self.downcase!
+    total_score = 0
 
-    letters = self.split("")
+    downcase!
+
+    letters = split("")
 
     letters.each() do |letter|
 
-      if score_1_letters.include?(letter)
-        total_score_array.push(1)
-      elsif score_2_letters.include?(letter)
-        total_score_array.push(2)
-      elsif score_3_letters.include?(letter)
-        total_score_array.push(3)
-      elsif score_4_letters.include?(letter)
-        total_score_array.push(4)
-      elsif score_5_letters.include?(letter)
-        total_score_array.push(5)
-      elsif score_8_letters.include?(letter)
-        total_score_array.push(8)
-      elsif score_10_letters.include?(letter)
-        total_score_array.push(10)
+      if letter_values[1].include?(letter)
+        total_score += 1
+
+      elsif letter_values[2].include?(letter)
+        total_score += 2
+
+      elsif letter_values[3].include?(letter)
+        total_score += 3
+
+      elsif letter_values[4].include?(letter)
+        total_score += 4
+
+      elsif letter_values[5].include?(letter)
+        total_score += 5
+
+      elsif letter_values[8].include?(letter)
+        total_score += 8
+
+      elsif letter_values[10].include?(letter)
+        total_score += 10
+
       else
-        total_score_array.push(0)
+        total_score += 0
       end
     end
-    update_total = total_score_array.sum()
-
-    update_total
+    total_score
   end
 end
