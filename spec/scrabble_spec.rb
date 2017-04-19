@@ -19,5 +19,9 @@ describe('String#scrabble') do
     expect("da".scrabble()).to(eq(3))
   end
 
+  it('returns sum of all letter/value groups') do
+    expect("quixotry".scrabble()).to(eq(27))
+  end
+
 
 end
